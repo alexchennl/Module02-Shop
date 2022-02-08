@@ -16,7 +16,6 @@ module.exports = ({develop}) => ({
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    assetModuleFilename: 'images/[hash][ext][query]',
     clean: true,
   },
   plugins: [
@@ -31,7 +30,7 @@ module.exports = ({develop}) => ({
       rules: [
           {
               test: /\.(?:ico|png|jpg|jpeg|svg)$/i,
-              type: 'asset/resource'
+              type: 'asset/inline'
           },
           {
               test: /\.html$/i,
