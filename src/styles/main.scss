@@ -1,17 +1,63 @@
-$bg: #eee;
+$text: #27300f;
+$orange: #d26a22;
+$white: #ffffff;
 
-.box {
-    background-color: $bg;
-    &_title {
-        color: #f00;
+.header {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__nav {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding-left: 0;
+        gap: 50px;
     }
-    &_image {
-        max-width: 200px;
-    }
-    &_svg {
-        fill: #000;
+    &__link {
+        font-size: 16px;
+        color: $text;
+        text-decoration: none;
         &:hover {
-            fill: blue;
+            color: $orange;
         }
     }
+    &__tel {
+        font-size: 16px;
+        color: $text;
+        text-decoration: none;
+        &:hover {
+            color: $orange;
+        }
+    }
+    &__cart {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-image: url(../images/cart.svg);
+        background-repeat: no-repeat;
+        background-size: 17px 15px;
+        background-color: $orange;
+        border-radius: 100%;
+        background-position: center center;
+        position: relative;
+    }
+    &__counter {
+        color: $white;
+        font-size: 8px;
+        position: absolute;
+        right: 10px;
+        top: 6px;
+    }
+}
+.logo {
+    display: block;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 122px;
+    height: 32px;
 }
