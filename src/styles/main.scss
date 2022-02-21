@@ -7,6 +7,7 @@ $white: #ffffff;
 $font-cormorant: 'Cormorant', serif;
 $font-jost: 'Jost', sans-serif;
 
+
 html {
     font-size: 10px;
 }
@@ -17,7 +18,7 @@ body {
 }
 .header {
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 0 auto 5rem;
     padding: 4rem 15px 0 15px;
     display: flex;
     justify-content: space-between;
@@ -73,7 +74,7 @@ body {
     display: block;
     background-image: url(../images/logo.svg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     width: 12.2rem;
     height: 3.2rem;
 }
@@ -87,13 +88,150 @@ body {
     background-image: url(../images/main.png);
     background-size: cover;
     background-position-x: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-bottom: 195px;
+    z-index: 0;
     &__item {
         margin-left: 12rem;
         max-width: 378px;
         margin-top: 6rem;
     }
     &__link {
-        margin-top: 6rem;
+        margin-top: 4.8rem;
+    }
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+    &__text {
+        padding-top: 3rem;
+    }
+    &__cover {
+        flex-basis: 762px;
+        height: 758px;
+        border: 1px solid rgba($green, 0.4);
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    &__line {
+        width: 658px;
+        height: 658px;
+        border: 1px solid rgba($green, 0.4);
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__image {
+        width: 92%;
+    }
+    &__btn {
+        border: none;
+        padding: 0;
+        position: absolute;
+        color: $green;
+        background-color: transparent;
+        text-align: left;
+        line-height: 1.5;
+        &:hover {
+            &::before {
+                background-color: $orange;
+                box-shadow: 0 0 0 5px $white, 0 0 0 6px $orange;
+            }
+        }
+        &::before {
+            content: '';
+            background-color: $green;
+            width: 10px;
+            height: 10px;
+            box-shadow: 0 0 0 5px $white, 0 0 0 6px $green;
+            border-radius: 100%;
+            position: absolute;
+        }
+        &_1 {
+            top: 42px;
+            left: 65px;
+            &::before {
+                bottom: 12px;
+                right: -35px;
+            }
+        }
+        &_2 {
+            top: 190px;
+            right: 3px;
+            &::before {
+                left: -25px;
+                top: 21px;
+            }
+        }
+        &_3 {
+            bottom: -52px;
+            right: 244px;
+            &::before {
+                top: -20px;
+                left: 14px;
+            }
+        }
+    }
+    &__food {
+        display: block;
+        color: rgba($green, 0.8);
+    }
+    &__tomato {
+        width: 11rem;
+        height: 11.9rem;
+        position: absolute;
+        bottom: 123px;
+        right: 121px;
+        z-index: -1;
+    }
+    &__avocado {
+        width: 19.4rem;
+        height: 18.9rem;
+        position: absolute;
+        top: 43px;
+        right: -17px;
+        z-index: -1;
+    }
+    &__cucumber {
+        width: 8.5rem;
+        height: 9.2rem;
+        position: absolute;
+        top: -52px;
+        left: 690px;
+        z-index: -1;
+    }
+    &__beans {
+        width: 8.8rem;
+        height: 11.5rem;
+        position: absolute;
+        bottom: 170px;
+        left: 16px;
+        z-index: -1;
+    }
+    &__bean {
+        width: 6.9rem;
+        height: 6.1rem;
+        position: absolute;
+        bottom: 212px;
+        left: -34px;
+        z-index: -1;
+    }
+    &__pepper {
+        width: 8.6rem;
+        height: 7.2rem;
+        position: absolute;
+        top: 399px;
+        left: 36px;
+        z-index: -1;
     }
 }
 .title {
@@ -101,6 +239,7 @@ body {
     font-family: $font-cormorant;
     font-weight: 700;
     font-size: 8rem;
+    line-height: 1;
     &__span {
         font-style: italic;
     }
@@ -112,17 +251,121 @@ body {
 }
 .description {
     margin: 0;
+    line-height: 1.5;
     &_size-s {
         font-size: 1.8rem;
+    }
+    &_size-m {
+        font-size: 2.4rem;
     }
 }
 .link {
     color: $white;
     text-transform: uppercase;
-    padding: 2.5rem 4.3rem;
+    padding: 2.3rem 4.2rem;
     background-color: $orange;
     box-shadow: 0px 1rem 1.1rem .2rem rgba(207, 92, 13, 0.2);
     text-decoration: none;
-    border-radius: 3.8rem;
+    border-radius: 4rem;
     display: inline-block;
+    letter-spacing: .13rem;
+}
+.offer {
+    background-image: url(../images/offer.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    padding-top: 1.2rem;
+    padding-bottom: 200px;
+    &__text {
+        margin-top: 5.9rem;
+        max-width: 685px;
+    }
+    &__slider {
+        overflow: hidden;
+        padding-top: 100px;
+    }
+}
+.swiper {
+    overflow: initial;
+    &-pagination {
+        display: none;
+    }
+    &-button-next, &-button-prev {
+        top: -50px;
+        &::after {
+            color: rgba($green, 0.4);
+            font-size: initial;
+            width: 11px;
+            height: 18px;
+        }
+        &:hover {
+            &::after {
+            color: rgba($green, 1);
+            }
+        }
+    }
+    &-button-prev {
+        left: initial;
+        right: 100px;
+    }
+    &-slide {
+        box-sizing: border-box;
+        border: 1px solid rgba($green, 0.4);
+        border-radius: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0 0 0 2px rgba($green, 0.4) inset;
+            .swiper-slide__text {
+                display: block;
+            }
+            .swiper-slide__link {
+                display: block;
+            }
+        }
+        &__content {
+            margin-left: 3.8rem;
+            margin-bottom: 4rem;
+        }
+        &_background1 {
+            background-image: url(../images/bottle-of-milk.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 52rem;
+        }
+        &_background2 {
+            background-image: url(../images/pasta.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 52rem;
+        }
+        &_background3 {
+            background-image: url(../images/steaks-raw.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 52rem;
+        }
+        &__title {
+            font-family: $font-cormorant;
+            font-weight: 700;
+            font-size: 3rem;
+        }
+        &__text {
+            display: none;
+            color: rgba($green, 0.7);
+            max-width: 27rem;
+            line-height: 1.5;
+            margin-bottom: 4rem;
+        }
+        &__link {
+            text-decoration: none;
+            color: rgba($green, 0.8);
+            text-transform: uppercase;
+            letter-spacing: .2rem;
+            display: none;
+        }
+    }
 }
