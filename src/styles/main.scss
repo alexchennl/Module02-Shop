@@ -276,14 +276,14 @@ body {
     background-position-x: center;
     background-repeat: no-repeat;
     padding-top: 1.2rem;
-    padding-bottom: 200px;
+    padding-bottom: 16rem;
     &__text {
         margin-top: 5.9rem;
         max-width: 685px;
     }
     &__slider {
         overflow: hidden;
-        padding-top: 100px;
+        padding-top: 10rem;
     }
 }
 .swiper {
@@ -295,9 +295,7 @@ body {
         top: -50px;
         &::after {
             color: rgba($green, 0.4);
-            font-size: initial;
-            width: 11px;
-            height: 18px;
+            font-size: 20px;
         }
         &:hover {
             &::after {
@@ -316,14 +314,28 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: end;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 52rem;
+        z-index: 0;
         &:hover {
-            cursor: pointer;
             box-shadow: 0 0 0 2px rgba($green, 0.4) inset;
-            .swiper-slide__text {
-                display: block;
+            background: rbga($white, .55);
+            .swiper-slide__hover {
+            height: 20.9rem;
+            opacity: 1;
             }
-            .swiper-slide__link {
-                display: block;
+            &::after {
+                content: '';
+                background-color: rgba($white, .55);
+                width: calc(100% - 4px);
+                height: calc(100% - 4px);
+                background-size: cover;
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                border-radius: 2rem;
+                z-index: -1;
             }
         }
         &__content {
@@ -332,21 +344,16 @@ body {
         }
         &_background1 {
             background-image: url(../images/bottle-of-milk.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 52rem;
         }
         &_background2 {
             background-image: url(../images/pasta.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 52rem;
         }
         &_background3 {
             background-image: url(../images/steaks-raw.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 52rem;
+        }
+        &__hover {
+            height: 0;
+            opacity: 0;
         }
         &__title {
             font-family: $font-cormorant;
@@ -354,7 +361,6 @@ body {
             font-size: 3rem;
         }
         &__text {
-            display: none;
             color: rgba($green, 0.7);
             max-width: 27rem;
             line-height: 1.5;
@@ -364,8 +370,104 @@ body {
             text-decoration: none;
             color: rgba($green, 0.8);
             text-transform: uppercase;
-            letter-spacing: .2rem;
-            display: none;
+            letter-spacing: .1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 2.8rem;
+            &:hover {
+                opacity: 1;
+            }
+            &::before {
+                content: '';
+                display: block;
+                width: 1.4rem;
+                height: 1.4rem;
+                background-image: url(../images/plus.svg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                box-shadow: 0 0 0 7px $white, 0 0 0 8px #000;
+                background-color: $white;
+                border-radius: 100%;
+                border: $white;
+                margin-left: 0.8rem;
+            }
+        }
+    }
+}
+.about {
+    &__box {
+        display: flex;
+        gap: 22rem;
+        align-items: center;
+        margin-top: 5.8rem;
+        margin-left: 12.2rem;
+    }
+    &__text {
+        max-width: 59rem;
+    }
+    &__list {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        gap: 9.2rem;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 30px;
+        font-family: $font-cormorant;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &_health {
+            &::before {
+                content: '';
+                display: block;
+                background-image: url(../images/health.svg);
+                background-size: 85%;
+                background-position: center;
+                border-radius: 100%;
+                background-color: #ffffff;
+                background-repeat: no-repeat;
+                box-shadow: 0 0 0 16px #ffffff, 0 0 0 17px rgba(129, 129, 129, .4);
+                width: 50px;
+                height: 47px;
+                margin-bottom: 40px;
+            }
+        }
+        &_traditions {
+            &::before {
+                content: '';
+                display: block;
+                background-image: url(../images/traditions.svg);
+                background-size: 85%;
+                background-position: center;
+                box-shadow: 0 0 0 20px #ffffff, 0 0 0 21px rgba(129, 129, 129, .4);
+                border-radius: 100%;
+                background-color: #ffffff;
+                background-repeat: no-repeat;
+                width: 44px;
+                height: 44px;
+                margin-bottom: 40px;
+            }
+        }
+        &_taste {
+            &::before {
+                content: '';
+                display: block;
+                background-image: url(../images/taste.svg);
+                background-size: 85%;
+                background-position: center;
+                box-shadow: 0 0 0 16px #ffffff, 0 0 0 17px rgba(129, 129, 129, .4);
+                border-radius: 100%;
+                background-color: #ffffff;
+                background-repeat: no-repeat;
+                width: 52px;
+                height: 46px;
+                margin-bottom: 35px;
+            }
         }
     }
 }
