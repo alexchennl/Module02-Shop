@@ -77,6 +77,11 @@ body {
     background-size: contain;
     width: 12.2rem;
     height: 3.2rem;
+    &_max {
+        width: 18rem;
+        height: 5rem;
+        margin-top: .9rem;
+    }
 }
 .container {
     max-width: 1440px;
@@ -264,7 +269,17 @@ body {
     &__link {
         text-decoration: none;
         color: $green;
-        border-bottom: 1px solid #5c634a;
+        position: relative;
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #5c634a;
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+        }
     }
 }
 .link {
@@ -747,7 +762,7 @@ body {
 }
 .contact {
     padding-top: 20.6rem;
-    padding-bottom: 100px;
+    padding-bottom: 16rem;
     &-box {
         display: flex;
         justify-content: space-between;
@@ -856,5 +871,89 @@ body {
         text-decoration: none;
         border-bottom: 1px solid #ececec;
         color: rgba($green, 0.6);
+    }
+}
+footer {
+    border-top: 1px solid #d4d6cf;
+    padding-top: 77px;
+}
+.footer {
+    background-image: url(../images/footer.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 4rem;
+    }
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2.6rem;
+        &_padding {
+            padding: 0 0 0 13rem;
+        }
+    }
+    &__item {
+        display: block;
+        font-size: 1.8rem;
+    }
+    &__link {
+        text-decoration: none;
+        color: $green;
+        font-size: 1.8rem;
+        &_size-color {
+            font-size: 1.6rem;
+            color: rgba($green, 0.6);
+        }
+    }
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    &__tel {
+        font-size: 2.7rem;
+    }
+    &__text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: rgba($green, 0.6);
+    }
+}
+.footer-socials {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2.9rem;
+    &__link {
+        display: block;
+        text-decoration: none;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 47px;
+        height: 47px;
+        border: 3px solid #545b41;
+        border-radius: 100%;
+    }
+    &__vk {
+        background-image: url(../images/vk.svg);
+        background-size: 34px 24px;
+    }
+    &__ig {
+        background-image: url(../images/ig.svg);
+        background-size: 19px 19px;
+    }
+    &__fb {
+        background-image: url(../images/fb.svg);
+        background-size: 18px 28px;
     }
 }
