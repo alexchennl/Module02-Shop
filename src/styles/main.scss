@@ -23,6 +23,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &__navigation {
+        flex-grow: 1;
+        margin-left: 12rem;
+    }
     &__nav {
         display: flex;
         list-style-type: none;
@@ -33,6 +37,7 @@ body {
     &__link {
         color: $green;
         text-decoration: none;
+        transition: .3s;
         &:hover {
             color: $orange;
         }
@@ -41,13 +46,17 @@ body {
         color: $green;
         font-weight: 500;
         text-decoration: none;
+        transition: .3s;
+        flex-basis: 23.4rem;
+        letter-spacing: .13rem;
+        text-align: left;
         &:hover {
             color: $orange;
         }
     }
     &__cart {
         display: block;
-        width: 3.8rem;
+        flex-basis: 3.8rem;
         height: 3.8rem;
         background-image: url(../images/cart.svg);
         background-repeat: no-repeat;
@@ -57,6 +66,8 @@ body {
         border: 2px solid $orange;
         background-position: center center;
         position: relative;
+        transition: .3s;
+        cursor: pointer;
         &:hover {
             background-color: $green;
             border-color: $green;
@@ -75,7 +86,7 @@ body {
     background-image: url(../images/logo.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 12.2rem;
+    flex-basis: 12.2rem;
     height: 3.2rem;
     &_max {
         width: 18rem;
@@ -137,6 +148,8 @@ body {
     }
     &__image {
         width: 92%;
+        border-radius: 100%;
+        animation: shadow 5s infinite linear;
     }
     &__btn {
         border: none;
@@ -160,6 +173,8 @@ body {
             box-shadow: 0 0 0 5px $white, 0 0 0 6px $green;
             border-radius: 100%;
             position: absolute;
+            transition: .3s;
+            cursor: pointer;
         }
         &_1 {
             top: 42px;
@@ -197,6 +212,7 @@ body {
         bottom: 123px;
         right: 121px;
         z-index: -1;
+        animation: spin 5s infinite;
     }
     &__avocado {
         width: 19.4rem;
@@ -234,9 +250,8 @@ body {
         width: 8.6rem;
         height: 7.2rem;
         position: absolute;
-        top: 399px;
-        left: 36px;
         z-index: -1;
+        animation: image 5s infinite  cubic-bezier(0.45, 0.05, 0.55, 0.95);
     }
 }
 .title {
@@ -293,12 +308,17 @@ body {
     display: inline-block;
     letter-spacing: .13rem;
     border: none;
+    transition: .3s;
+    cursor: pointer;
     &_padding {
         padding: 2.3rem 4.7rem;
     }
     &_size-s {
         font-size: 1.4rem;
         padding: 2rem 3.2rem;
+    }
+    &:hover {
+        background-color: #bf601f;
     }
 }
 .offer {
@@ -327,6 +347,7 @@ body {
         &::after {
             color: rgba($green, 0.4);
             font-size: 20px;
+            transition: .3s;
         }
         &:hover {
             &::after {
@@ -345,6 +366,7 @@ body {
         background-repeat: no-repeat;
         height: 52rem;
         z-index: 0;
+        transition: .3s;
         &_big-size {
             height: 68.5rem;
         }
@@ -353,6 +375,7 @@ body {
             flex-direction: column;
             justify-content: end;
             background-size: 100%;
+            transition: .3s;
             &:hover {
                 .swiper-slide__hover {
                     height: 20.9rem;
@@ -390,6 +413,7 @@ body {
         &__hover {
             height: 0;
             opacity: 0;
+            transition: .3s;
         }
         &__title {
             font-family: $font-cormorant;
@@ -449,7 +473,7 @@ body {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            max-width: 351px;
+            max-width: 323px;
         }
         &__description {
             font-size: 1.8rem;
@@ -470,8 +494,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     &__btn {
-        cursor: pointer;
         width: 5rem;
         height: 5rem;
         border: 1px solid $green;
@@ -613,6 +637,7 @@ body {
         border-radius: 5.4rem;
         padding: 2.4rem 3.2rem;
         display: block;
+        transition: .3s;
         &:hover {
             border: 1px solid rgba($orange, .5);
             color: $orange;
@@ -635,6 +660,8 @@ body {
         font-size: 1.6rem;
         opacity: .8;
         gap: 10px;
+        cursor: pointer;
+        transition: .3s;
         &::before {
             content: '';
             display: block;
@@ -645,7 +672,7 @@ body {
             background-repeat: no-repeat;
         }
         &:hover {
-            cursor: pointer;
+            opacity: 1;
         }
     }
 }
@@ -743,8 +770,11 @@ body {
         background-position: center center;
         opacity: .4;
         cursor: pointer;
+        transition: .3s;
+        transform: scale(1);
         &:hover {
             opacity: 1;
+            transform: scale(1.1);
         }
     }
     &__mastercard {
@@ -907,9 +937,13 @@ footer {
         text-decoration: none;
         color: $green;
         font-size: 1.8rem;
+        transition: .3s;
         &_size-color {
             font-size: 1.6rem;
             color: rgba($green, 0.6);
+        }
+        &:hover {
+            color: $orange;
         }
     }
     &__contact {
@@ -925,6 +959,15 @@ footer {
         align-items: center;
         justify-content: space-between;
         color: rgba($green, 0.6);
+        transition: .3s;
+    }
+    &__author {
+        cursor: pointer;
+        &:hover {
+            .footer__link {
+                color: rgba($green, 1);
+            }
+        }
     }
 }
 .footer-socials {
@@ -955,5 +998,44 @@ footer {
     &__fb {
         background-image: url(../images/fb.svg);
         background-size: 18px 28px;
+    }
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 0 0 rgba($green, .5);
+    }
+    50% {
+        box-shadow: 20px 20px 33px 0 rgba($green, .5);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba($green, .5);
+    }
+}
+
+@keyframes image {
+    0% {
+        top: 399px;
+        left: 36px;
+    }
+    50% {
+        top: 200px;
+        left: 36px;
+    }
+    100% {
+        top: 399px;
+        left: 36px;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: none;
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: none;
     }
 }
