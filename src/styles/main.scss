@@ -665,6 +665,7 @@ body {
         }
         &_background1 {
             background-image: url(../images/bottle-of-milk.png);
+            background-position-x: calc(100% + 68px);
         }
         &_background2 {
             background-image: url(../images/pasta.png);
@@ -788,7 +789,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     @media (max-width: $r_tab) {
         display: none;
     }
@@ -817,6 +817,7 @@ body {
         background-image: url(../images/plus-counter.svg);
         background-size: 20px 11px;
         background-repeat: no-repeat;
+        cursor: pointer;
     }
     &__input {
         text-align: center;
