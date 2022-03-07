@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #27300f;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Фигура_505_копия_2" data-name="Фигура 505 копия 2" class="cls-1" d="M232,29V27h16v2H232Zm0,5V32h16v2H232Zm0,5V37h16v2H232Z" transform="translate(-232 -27)"/>
+</svg>
